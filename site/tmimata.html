@@ -9,12 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="site.js"></script>
 </head>
 <body>
   <header class="header">
     <div class="wrap">
       <a class="logo" href="index.html"><span class="emblem" aria-hidden="true"></span>Ιπποκράτης ο Κώος</a>
-      <nav class="nav" aria-label="Κύρια πλοήγηση">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Μενού">☰</button>
+      <nav class="nav" id="main-nav" aria-label="Κύρια πλοήγηση">
         <a href="index.html">Αρχική</a>
         <a href="tmimata.html" aria-current="page">Τμήματα</a>
         <a href="program.html">Πρόγραμμα</a>
@@ -178,6 +180,11 @@
       </div>
     </section>
   </main>
+
+  <div class="call-bar">
+    <a href="tel:+306946366190" aria-label="Κλήση στη Μαρία Λιαμακερού">Κλήση: Μαρία</a>
+    <a href="tel:+306947206956" aria-label="Κλήση στην Εύα Στάκκου">Κλήση: Εύα</a>
+  </div>
 
   <footer class="footer">
     <div class="wrap">Ιπποκράτης ο Κώος</div>

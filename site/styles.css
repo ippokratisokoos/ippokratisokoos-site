@@ -53,7 +53,7 @@ a { color: inherit; }
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px 24px;
+  gap: 8px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -76,7 +76,21 @@ a { color: inherit; }
   filter: contrast(1.08) brightness(1.06);
 }
 .logo .emblem { width: 66px; }
-.nav { display: flex; flex-wrap: wrap; gap: 4px; }
+.nav-toggle {
+  display: none;
+  font: inherit;
+  font-weight: 700;
+  padding: 9px 14px;
+  border: 2px solid var(--navy);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--navy);
+  cursor: pointer;
+}
+.js .nav-toggle { display: block; }
+.nav { display: flex; flex-direction: column; width: 100%; gap: 4px; }
+.js .nav { display: none; }
+.js .nav.open { display: flex; }
 .nav a {
   display: block;
   padding: 9px 12px;
@@ -228,6 +242,39 @@ a.group:hover { transform: translateY(-3px); }
 .contact { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 14px; }
 .contact strong { display: block; }
 
+.map { margin-top: 28px; }
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 320px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.map .btn { margin-top: 12px; }
+
+/* Μένει πάνω από την ένδειξη του Netlify, στο κάτω μέρος της οθόνης */
+.call-bar {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 60px;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.call-bar a {
+  padding: 11px 8px;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(18, 39, 95, 0.35);
+}
+.call-bar a:hover { background: var(--red-dark); }
+
 .page-head { background: var(--navy); color: #fff; padding: 44px 0; border-bottom: 6px solid var(--red); }
 .page-head p { margin-top: 12px; color: #dfe3ec; max-width: 52ch; }
 
@@ -258,10 +305,15 @@ a.group:hover { transform: translateY(-3px); }
   padding: 12px 16px;
 }
 
-/* Το κάτω κενό αφήνει χώρο για την ένδειξη του Netlify */
-.footer { background: var(--navy); color: #dfe3ec; padding: 24px 0 72px; font-size: 0.95rem; }
+/* Το κάτω κενό αφήνει χώρο για την ένδειξη του Netlify και τα κουμπιά κλήσης */
+.footer { background: var(--navy); color: #dfe3ec; padding: 24px 0 130px; font-size: 0.95rem; }
 
 @media (min-width: 720px) {
+  .js .nav-toggle { display: none; }
+  .nav, .js .nav { display: flex; flex-direction: row; flex-wrap: wrap; width: auto; }
+  .call-bar { display: none; }
+  .footer { padding-bottom: 72px; }
+  .map iframe { height: 400px; }
   .section { padding: 72px 0; }
   .hero .wrap { padding-top: 40px; padding-bottom: 44px; }
   .hero + .section { padding-top: 40px; }
