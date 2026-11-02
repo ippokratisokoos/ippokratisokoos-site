@@ -149,7 +149,8 @@ a { color: inherit; }
   background-image: url("images/afisa.webp");
   background-repeat: no-repeat;
 }
-.g-rythmiki .group-photo { background-image: url("images/rythmiki-9996.jpg"); background-size: cover; background-position: center; }
+.g-rythmiki .group-photo { background-size: 305.8% auto; background-position: 0.56% 34.95%; }
+.g-rythmiki .sport-photo { background-image: url("images/rythmiki-9996.jpg"); background-size: cover; background-position: center; }
 .g-enorgani .group-photo { background-size: 350.7% auto; background-position: 50% 39.25%; }
 .g-stivos .group-photo { background-size: 302.3% auto; background-position: 100% 35.88%; }
 .group h3 {
