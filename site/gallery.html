@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ιπποκράτης ο Κώος | Gallery</title>
+  <meta name="description" content="Φωτογραφίες και βίντεο από τον σύλλογο Ιπποκράτης ο Κώος.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <a class="logo" href="index.html"><span class="emblem" aria-hidden="true"></span>Ιπποκράτης ο Κώος</a>
+      <nav class="nav" aria-label="Κύρια πλοήγηση">
+        <a href="index.html">Αρχική</a>
+        <a href="tmimata.html">Τμήματα</a>
+        <a href="program.html">Πρόγραμμα</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <h1>Gallery</h1>
+        <p>Στιγμές από τις προπονήσεις και τους αγώνες μας.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="filters" role="group" aria-label="Κατηγορία">
+          <button type="button" data-tab="fotografies" aria-pressed="true">Φωτογραφίες</button>
+          <button type="button" data-tab="video" aria-pressed="false">Βίντεο</button>
+        </div>
+
+        <div class="media-grid" id="fotografies">
+          <div class="g-rythmiki"><div class="group-photo media-item" role="img" aria-label="Αθλήτρια ρυθμικής με κορδέλα"></div></div>
+          <div class="g-enorgani"><div class="group-photo media-item" role="img" aria-label="Αθλητής ενόργανης στον πλάγιο ίππο"></div></div>
+          <div class="g-stivos"><div class="group-photo media-item" role="img" aria-label="Αθλητές στίβου τρέχουν στον διάδρομο"></div></div>
+          <div class="media-empty"><span class="ph">[Φωτογραφία]</span></div>
+          <div class="media-empty"><span class="ph">[Φωτογραφία]</span></div>
+          <div class="media-empty"><span class="ph">[Φωτογραφία]</span></div>
+        </div>
+
+        <div class="video-grid" id="video" hidden>
+          <div class="media-empty media-empty-video"><span class="ph">[Βίντεο]</span></div>
+          <div class="media-empty media-empty-video"><span class="ph">[Βίντεο]</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">Ιπποκράτης ο Κώος</div>
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('[data-tab]');
+    function showTab(name) {
+      tabs.forEach((tab) => {
+        const active = tab.dataset.tab === name;
+        tab.setAttribute('aria-pressed', String(active));
+        document.getElementById(tab.dataset.tab).hidden = !active;
+      });
+    }
+    tabs.forEach((tab) => tab.addEventListener('click', () => showTab(tab.dataset.tab)));
+    if (location.hash === '#video') showTab('video');
+  </script>
+</body>
+</html>

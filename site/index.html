@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ιπποκράτης ο Κώος | Αρχική</title>
+  <meta name="description" content="Ιπποκράτης ο Κώος: σύλλογος ρυθμικής, ενόργανης γυμναστικής και στίβου στην Κω.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <a class="logo" href="index.html"><span class="emblem" aria-hidden="true"></span>Ιπποκράτης ο Κώος</a>
+      <nav class="nav" aria-label="Κύρια πλοήγηση">
+        <a href="index.html" aria-current="page">Αρχική</a>
+        <a href="tmimata.html">Τμήματα</a>
+        <a href="program.html">Πρόγραμμα</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <svg class="hero-brush" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <filter id="brush" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.09" numOctaves="3" seed="4"/>
+            <feDisplacementMap in="SourceGraphic" scale="70"/>
+          </filter>
+        </defs>
+        <g filter="url(#brush)">
+          <polygon points="-60,-60 330,-60 -60,170" fill="#c8102e"/>
+          <polygon points="700,-60 1060,-60 1060,150" fill="#12275f"/>
+          <polygon points="-60,840 -60,1060 280,1060" fill="#12275f"/>
+          <polygon points="1060,850 1060,1060 730,1060" fill="#c8102e"/>
+        </g>
+      </svg>
+      <div class="wrap">
+        <p class="hero-slogan">Αν θες κάποιον που θα πιστέψει σε εσένα και στις δυνατότητές σου</p>
+        <p class="hero-call">Έλα στο σωματείο μας!</p>
+        <div class="emblem" role="img" aria-label="Το σήμα του συλλόγου Ιπποκράτης ο Κώος"></div>
+        <h1>Ιπποκράτης ο Κώος</h1>
+        <p class="hero-place">Ρυθμική, ενόργανη και στίβος · Νήσος Κως</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#eggrafes">Πληροφορίες για εγγραφές</a>
+          <a class="btn btn-ghost" href="program.html">Δες το πρόγραμμα</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap wrap-wide">
+        <h2>Τα τμήματά μας</h2>
+        <div class="groups">
+          <a class="group g-rythmiki" href="tmimata.html#rythmiki">
+            <div class="group-photo" role="img" aria-label="Αθλήτρια ρυθμικής με κορδέλα"></div>
+            <h3>Ρυθμική Γυμναστική</h3>
+            <p><span class="ph">[Ηλικίες και επίπεδα ρυθμικής]</span></p>
+            <p class="group-more">Μάθε περισσότερα →</p>
+          </a>
+          <a class="group g-enorgani" href="tmimata.html#enorgani">
+            <div class="group-photo" role="img" aria-label="Αθλητής ενόργανης στον πλάγιο ίππο"></div>
+            <h3>Ενόργανη Γυμναστική</h3>
+            <p><span class="ph">[Ηλικίες και επίπεδα ενόργανης]</span></p>
+            <p class="group-more">Μάθε περισσότερα →</p>
+          </a>
+          <a class="group g-stivos" href="tmimata.html#stivos">
+            <div class="group-photo" role="img" aria-label="Αθλητές στίβου τρέχουν στον διάδρομο"></div>
+            <h3>Στίβος</h3>
+            <p><span class="ph">[Ηλικίες και επίπεδα στίβου]</span></p>
+            <p class="group-more">Μάθε περισσότερα →</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="belief">
+      <div class="wrap">
+        <p>Εμείς πιστεύουμε στα όνειρά σου <em>εμπιστεύσου κι εσύ εμάς!</em></p>
+      </div>
+    </section>
+
+    <section class="signup" id="eggrafes">
+      <div class="wrap">
+        <p class="signup-kicker">Πληροφορίες για</p>
+        <h2>Εγγραφές</h2>
+        <p class="signup-season">Για τη νέα αθλητική σεζόν ξεκίνησαν!</p>
+        <div class="people">
+          <a class="person" href="tel:+306946366190">Μαρία Λιαμακερού <strong>694 636 6190</strong></a>
+          <a class="person" href="tel:+306947206956">Εύα Στάκκου <strong>694 720 6956</strong></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <h2>Επικοινωνία</h2>
+        <ul class="contact">
+          <li><strong>Διεύθυνση</strong> Αθλητικό Πολύκεντρο, Κως</li>
+          <li><strong>Email</strong> <a href="mailto:ippokratis.o.koos@gmail.com">ippokratis.o.koos@gmail.com</a></li>
+          <li><strong>Instagram</strong> <a href="https://www.instagram.com/ippokratis_o_koos" target="_blank" rel="noopener">@ippokratis_o_koos</a></li>
+          <li><strong>Facebook</strong> <span class="ph">[Σελίδα Facebook]</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">Ιπποκράτης ο Κώος</div>
+  </footer>
+</body>
+</html>

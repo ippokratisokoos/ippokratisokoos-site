@@ -1,0 +1,281 @@
+/* Χρώματα συλλόγου */
+:root {
+  --navy: #12275f;
+  --navy-soft: #4a5578;
+  --red: #c8102e;
+  --red-dark: #9f0c24;
+  --paper: #ffffff;
+  --tint: #f3f5fa;
+  --line: #dfe3ec;
+  --radius: 14px;
+  --wrap: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--navy);
+  font-family: "Commissioner", "Segoe UI", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 { line-height: 1.15; margin: 0; font-weight: 800; }
+h1 { font-size: clamp(2.2rem, 8vw, 3.8rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.6rem, 5vw, 2.4rem); letter-spacing: -0.01em; }
+h3 { font-size: 1.2rem; }
+p { margin: 0; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+
+:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 16px; }
+.wrap-wide { max-width: 1280px; }
+.section { padding: 48px 0; }
+
+/* Στοιχεία που λείπουν και πρέπει να συμπληρωθούν */
+.ph {
+  background: #fff3c4;
+  border-bottom: 2px dashed #b98900;
+  color: #4d3900;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+.header { background: var(--paper); border-bottom: 1px solid var(--line); }
+.header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  text-decoration: none;
+}
+/* Προσωρινά: το σήμα κόβεται από την αφίσα μέχρι να μπει το images/logo.png */
+.emblem {
+  display: block;
+  aspect-ratio: 1.5;
+  background-image: url("images/afisa.webp");
+  background-repeat: no-repeat;
+  background-size: 302.3% auto;
+  background-position: 50.57% 18.07%;
+  mix-blend-mode: multiply;
+  filter: contrast(1.08) brightness(1.06);
+}
+.logo .emblem { width: 66px; }
+.nav { display: flex; flex-wrap: wrap; gap: 4px; }
+.nav a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.nav a:hover { background: var(--tint); }
+.nav a[aria-current="page"] { background: var(--navy); color: #fff; }
+
+.hero { position: relative; overflow: hidden; text-align: center; }
+.hero .wrap { position: relative; padding-top: 36px; padding-bottom: 36px; }
+.hero h1 { font-size: clamp(1.8rem, 6vw, 2.8rem); }
+.hero .actions { margin-top: 18px; gap: 10px; }
+.hero + .section { padding-top: 28px; }
+.hero-brush { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero-slogan { max-width: 18em; margin: 0 auto; font-size: 1rem; font-weight: 700; }
+.hero-call {
+  margin-top: 4px;
+  color: var(--red);
+  font-size: clamp(1.4rem, 5.5vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+.hero .emblem { width: min(190px, 55%); margin: 12px auto 4px; }
+.hero-place { margin-top: 4px; font-weight: 600; }
+
+.actions { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.btn {
+  display: block;
+  padding: 13px 22px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+.btn-primary { background: var(--red); color: #fff; }
+.btn-primary:hover { background: var(--red-dark); }
+.btn-ghost { background: #fff; border-color: var(--navy); color: var(--navy); }
+.btn-ghost:hover { background: var(--navy); color: #fff; }
+.btn-dark { background: var(--navy); color: #fff; }
+.btn-dark:hover { background: var(--red); }
+
+.groups { display: grid; gap: 18px; margin-top: 28px; }
+.group {
+  background: var(--paper);
+  border: 4px solid var(--accent);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+/* Προσωρινά: οι φωτογραφίες κόβονται από την αφίσα μέχρι να έρθουν τα κανονικά αρχεία */
+.group-photo {
+  aspect-ratio: 0.62;
+  background-color: var(--tint);
+  background-image: url("images/afisa.webp");
+  background-repeat: no-repeat;
+}
+.g-rythmiki .group-photo { background-size: 305.8% auto; background-position: 0.56% 34.95%; }
+.g-enorgani .group-photo { background-size: 350.7% auto; background-position: 50% 39.25%; }
+.g-stivos .group-photo { background-size: 302.3% auto; background-position: 100% 35.88%; }
+.group h3 {
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 18px 22px 18px;
+  clip-path: polygon(0 14px, 100% 0, 100% 100%, 0 100%);
+  margin-top: -14px;
+  position: relative;
+}
+.group p { padding: 18px 22px 24px; }
+
+.g-rythmiki { --accent: var(--red); }
+.g-enorgani { --accent: var(--navy); }
+.g-stivos { --accent: var(--red); }
+
+a.group { display: block; color: inherit; text-decoration: none; transition: transform 0.15s ease; }
+a.group:hover { transform: translateY(-3px); }
+.group .group-more { padding-top: 0; color: var(--accent); font-weight: 700; }
+
+.jump { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 20px; padding-bottom: 4px; }
+.jump a {
+  padding: 9px 18px;
+  border: 1px solid var(--navy);
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.jump a:hover { background: var(--navy); color: #fff; }
+
+.sport { padding: 32px 0 40px; border-bottom: 1px solid var(--line); scroll-margin-top: 8px; }
+.sport:last-child { border-bottom: 0; }
+.sport-layout { display: grid; gap: 22px; }
+.sport-photo { border: 4px solid var(--accent); border-radius: var(--radius); }
+.sport h2 { color: var(--accent); }
+.sport h3 { margin-top: 26px; margin-bottom: 8px; }
+.sport-intro { margin-top: 12px; }
+.sport-link { margin-top: 8px; font-weight: 600; }
+.benefits { margin: 0; padding-left: 20px; }
+.sport details { border-top: 1px solid var(--line); padding: 10px 0; }
+.sport details:last-of-type { border-bottom: 1px solid var(--line); }
+.sport summary { font-weight: 600; cursor: pointer; }
+.sport details p { margin-top: 8px; }
+.sport-cta { margin-top: 28px; }
+
+.media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.video-grid { display: grid; gap: 14px; }
+.media-item { border-radius: 10px; }
+.media-empty {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 0.62;
+  padding: 8px;
+  text-align: center;
+  background: var(--tint);
+  border: 2px dashed var(--line);
+  border-radius: 10px;
+}
+.media-empty-video { aspect-ratio: 16 / 9; }
+
+.belief { padding: 0 0 40px; text-align: center; }
+.belief p { font-size: clamp(1.2rem, 4vw, 1.6rem); font-weight: 700; }
+.belief em { display: block; color: var(--red); }
+
+.signup {
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  padding: 56px 0;
+  clip-path: polygon(0 16px, 100% 0, 100% calc(100% - 16px), 0 100%);
+}
+.signup-kicker { font-size: 1.05rem; font-weight: 600; }
+.signup h2 { margin-top: 6px; font-size: clamp(2.2rem, 9vw, 3.6rem); }
+.signup-season { margin-top: 6px; font-weight: 600; color: #dfe3ec; }
+.people { display: grid; gap: 12px; margin-top: 28px; }
+.person {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #fff;
+  color: var(--navy);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  text-decoration: none;
+}
+.person:hover { background: var(--tint); }
+.person strong { color: var(--red); font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+
+.contact { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 14px; }
+.contact strong { display: block; }
+
+.page-head { background: var(--navy); color: #fff; padding: 44px 0; border-bottom: 6px solid var(--red); }
+.page-head p { margin-top: 12px; color: #dfe3ec; max-width: 52ch; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.filters button {
+  font: inherit;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--navy);
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+}
+.filters button:hover { background: var(--tint); }
+.filters button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+
+.schedule { display: grid; gap: 36px; }
+.classes { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+.class {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--accent);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+/* Το κάτω κενό αφήνει χώρο για την ένδειξη του Netlify */
+.footer { background: var(--navy); color: #dfe3ec; padding: 24px 0 72px; font-size: 0.95rem; }
+
+@media (min-width: 720px) {
+  .section { padding: 72px 0; }
+  .hero .wrap { padding-top: 40px; padding-bottom: 44px; }
+  .hero + .section { padding-top: 40px; }
+  .hero-slogan { max-width: none; }
+  .media-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .video-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .sport { padding: 56px 0; }
+  .sport-layout { grid-template-columns: minmax(280px, 400px) 1fr; gap: 44px; align-items: start; }
+  .sport-photo { position: sticky; top: 16px; }
+  .actions { flex-direction: row; flex-wrap: wrap; }
+  .hero .actions { justify-content: center; }
+  .btn { display: inline-block; }
+  .groups { grid-template-columns: repeat(3, 1fr); }
+  .people { grid-template-columns: 1fr 1fr; max-width: 680px; margin-left: auto; margin-right: auto; }
+  .contact { grid-template-columns: repeat(2, 1fr); }
+  .class { grid-template-columns: 1fr 1fr 1fr; align-items: center; }
+}

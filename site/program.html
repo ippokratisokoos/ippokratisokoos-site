@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ιπποκράτης ο Κώος | Πρόγραμμα</title>
+  <meta name="description" content="Το εβδομαδιαίο πρόγραμμα προπονήσεων ρυθμικής, ενόργανης και στίβου.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <a class="logo" href="index.html"><span class="emblem" aria-hidden="true"></span>Ιπποκράτης ο Κώος</a>
+      <nav class="nav" aria-label="Κύρια πλοήγηση">
+        <a href="index.html">Αρχική</a>
+        <a href="tmimata.html">Τμήματα</a>
+        <a href="program.html" aria-current="page">Πρόγραμμα</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <h1>Πρόγραμμα</h1>
+        <p>Οι εβδομαδιαίες προπονήσεις ανά τμήμα.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="filters" role="group" aria-label="Φίλτρο τμήματος">
+          <button type="button" data-filter="all" aria-pressed="true">Όλα</button>
+          <button type="button" data-filter="rythmiki" aria-pressed="false">Ρυθμική</button>
+          <button type="button" data-filter="enorgani" aria-pressed="false">Ενόργανη</button>
+          <button type="button" data-filter="stivos" aria-pressed="false">Στίβος</button>
+        </div>
+
+        <div class="schedule">
+          <div class="dept g-rythmiki" id="rythmiki" data-group="rythmiki">
+            <h2>Ρυθμική</h2>
+            <ul class="classes">
+              <li class="class"><span class="ph">[Ημέρα]</span><span class="ph">[Ώρα]</span><span class="ph">[Ηλικίες / επίπεδο]</span></li>
+              <li class="class"><span class="ph">[Ημέρα]</span><span class="ph">[Ώρα]</span><span class="ph">[Ηλικίες / επίπεδο]</span></li>
+            </ul>
+          </div>
+          <div class="dept g-enorgani" id="enorgani" data-group="enorgani">
+            <h2>Ενόργανη</h2>
+            <ul class="classes">
+              <li class="class"><span class="ph">[Ημέρα]</span><span class="ph">[Ώρα]</span><span class="ph">[Ηλικίες / επίπεδο]</span></li>
+              <li class="class"><span class="ph">[Ημέρα]</span><span class="ph">[Ώρα]</span><span class="ph">[Ηλικίες / επίπεδο]</span></li>
+            </ul>
+          </div>
+          <div class="dept g-stivos" id="stivos" data-group="stivos">
+            <h2>Στίβος</h2>
+            <ul class="classes">
+              <li class="class"><span class="ph">[Ημέρα]</span><span class="ph">[Ώρα]</span><span class="ph">[Ηλικίες / επίπεδο]</span></li>
+              <li class="class"><span class="ph">[Ημέρα]</span><span class="ph">[Ώρα]</span><span class="ph">[Ηλικίες / επίπεδο]</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-dark" href="index.html#eggrafes">Πληροφορίες για εγγραφές</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">Ιπποκράτης ο Κώος</div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.filters button');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+        document.querySelectorAll('.dept').forEach((dept) => {
+          dept.hidden = filter !== 'all' && dept.dataset.group !== filter;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
